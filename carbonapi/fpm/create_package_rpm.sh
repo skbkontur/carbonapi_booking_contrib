@@ -27,7 +27,7 @@ egrep -q '^[0-9]+\.[a-z0-9]+$' <<< ${RELEASE} || {
 
 TMPDIR=$(mktemp -d)
 echo ${VERSION}-${RELEASE}
-make || die 1 "Can't build package"
+#make || die 1 "Can't build package"
 mkdir -p "${TMPDIR}/usr/bin" "${TMPDIR}/usr/share/carbonapi" || die 1 "Can't create install dir"
 cp ./carbonapi "${TMPDIR}/usr/bin" || die 1 "Can't install package"
 cp ./config/carbonapi.yaml "${TMPDIR}/usr/share/carbonapi" || die 1 "Can't install share"
